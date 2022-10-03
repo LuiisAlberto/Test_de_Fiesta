@@ -33,6 +33,7 @@ var preguntas=[
 ];
 
 var content_pregunta=document.getElementById('content-pregunta');
+var content_modal=document.getElementById('content-modal');
 var content_respuestas=[
 	document.getElementById('content-res1'),
 	document.getElementById('content-res2'),
@@ -40,5 +41,9 @@ var content_respuestas=[
 ];
 var content_progress=document.getElementById('progress-bar');
 
-var quizz=new Quizz(this.preguntas,this.fiestas,this.content_pregunta,this.content_respuestas,this.content_progress);
+var quizz=new Quizz(this.preguntas,this.fiestas,this.content_pregunta,this.content_respuestas,this.content_progress,this.content_modal);
 quizz.inicio();
+
+document.getElementById('btn-resert').addEventListener("click",()=>{
+	this.quizz.resert();
+});

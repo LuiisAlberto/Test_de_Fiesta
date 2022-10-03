@@ -15,29 +15,32 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-12 col-sm-12">
                     <br>
                     <div class="progress">
                         <div class="progress-bar" id="progress-bar" role="progressbar" aria-label="Example with label" style="width: 0%;" aria-valuemin="0" aria-valuemax="100">0%</div>
                     </div>
+                </div>
                     <br>
+                <div class="col-md-12 col-sm-12">
                     <h1 class="text-center display-6 py-5" id="content-pregunta"></h1>
+                </div>
                     <br>
                     <form>
                         <div class="row justify-content-center" class="content-preguntas">
-                            <div class="form-check col-4">
+                            <div class="form-check col-md-4 col-sm-4">
                                 <label class="content-respuesta" id="content-res1">
                                     <span class="texto"></span>
                                     <img class="img" style="width: 20rem;">
                                 </label>
                             </div>
-                            <div class="form-check col-4">
+                            <div class="form-check col-md-4 col-sm-4">
                                 <label class="content-respuesta" id="content-res2">
                                     <span class="texto"></span>
                                     <img class="img" style="width: 20rem;">
                                 </label>
                             </div>
-                            <div class="form-check col-4">
+                            <div class="form-check col-md-4 col-sm-4">
                                 <label class="content-respuesta" id="content-res3">
                                     <span class="texto"></span>
                                     <img class="img" style="width: 20rem;">
@@ -46,9 +49,16 @@
                         </div>
                         <br>
                     </form>
-                </div>
                 <br>
             </div>
+        </div>
+    </section>
+
+    <section class="content-modal" id="content-modal">
+        <div class="content-result">
+            <div class="texto"></div>
+            <img class="img" src=""><br>
+            <button class="btn center" id="btn-resert">Reiniciar Test</button>
         </div>
     </section>
 

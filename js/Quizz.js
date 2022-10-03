@@ -1,11 +1,12 @@
 class Quizz{
 
-	constructor(preguntas,fiestas,obj_pregunta,obj_respuestas,obj_progress){
+	constructor(preguntas,fiestas,obj_pregunta,obj_respuestas,obj_progress,content_modal){
 		this.preguntas=preguntas;
 		this.indice_actual=0;
 		this.fiestas=fiestas;
 		this.obj_pregunta=obj_pregunta;
 		this.obj_respuestas=obj_respuestas;
+		this.content_modal=content_modal;
 		this.actual={
 			pregunta:null,
 			respuestas:null,
@@ -22,6 +23,7 @@ class Quizz{
 	}
 
 	inicio(){
+		this.content_modal.style.display="none";
 		this.preguntar();
 		this.obj_respuestas.forEach((res,indice)=>{
 			res.addEventListener("click",()=>{
@@ -56,11 +58,21 @@ class Quizz{
 		}
 	}
 
+	resert(){
+		this.content_modal.style.display="none";
+		this.indice_actual=0;
+		this.preguntar();
+		this.obj_progress.style.width="0%";
+		this.obj_progress.innerHTML="0%";
+	}
+
 	fiesta(){
 		let fiesta=this.fiestas.sort((a,b)=>{
 			return a.puntaje>b.puntaje?-1:(a.puntaje<b.puntaje)?1:0;
 		})[0];
-		alert(fiesta.texto);
+		this.content_modal.style.display="";
+		this.content_modal.getElementsByClassName("texto")[0].innerHTML=fiesta.texto;
+		this.content_modal.getElementsByClassName("img")[0].src=fiesta.img;
 	}
 
 }
